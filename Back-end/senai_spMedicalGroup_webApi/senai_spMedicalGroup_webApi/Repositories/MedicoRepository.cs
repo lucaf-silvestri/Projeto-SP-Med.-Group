@@ -49,7 +49,30 @@ namespace senai_spMedicalGroup_webApi.Repositories
 
         public List<Medico> Listar()
         {
-            return ctx.Medicos.ToList();
+            return ctx.Medicos
+                .Select(c => new Medico
+                {
+                    IdMedico = c.IdMedico,
+                    IdUsuario = c.IdUsuario,
+                    IdEspecialidadeMedico = c.IdEspecialidadeMedico,
+                    IdClinica = c.IdClinica,
+                    CrmMedico = c.CrmMedico,
+                    NomeMedico = c.NomeMedico,
+                    IdClinicaNavigation = new Clinica
+                    {
+                        EnderecoClinica = c.IdClinicaNavigation.EnderecoClinica,
+                        HorarioInicio = c.IdClinicaNavigation.HorarioInicio,
+                        HorarioFim = c.IdClinicaNavigation.HorarioFim,
+                        Cnpj = c.IdClinicaNavigation.Cnpj,
+                        NomeFantasia = c.IdClinicaNavigation.NomeFantasia,
+                        RazaoSocial = c.IdClinicaNavigation.RazaoSocial,
+                    },
+                    IdEspecialidadeMedicoNavigation = new EspecialidadeMedico
+                    {
+                        NomeEspecialidade = c.IdEspecialidadeMedicoNavigation.NomeEspecialidade,
+                        DescricaoEspecialidade = c.IdEspecialidadeMedicoNavigation.DescricaoEspecialidade,
+                    }
+                }).ToList();
         }
 
         public List<Medico> ListarComConsultas()

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aluno\\Documents\\Pasta Mais Ridícula\\SENAI\\senai_sprint2_backend\\04_SPMedicalGroup\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj": {}
+    "C:\\Users\\giuli\\Downloads\\Porcaria\\Projeto-SP-Med.-Group-main\\Back-end\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aluno\\Documents\\Pasta Mais Ridícula\\SENAI\\senai_sprint2_backend\\04_SPMedicalGroup\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj": {
+    "C:\\Users\\giuli\\Downloads\\Porcaria\\Projeto-SP-Med.-Group-main\\Back-end\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aluno\\Documents\\Pasta Mais Ridícula\\SENAI\\senai_sprint2_backend\\04_SPMedicalGroup\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj",
+        "projectUniqueName": "C:\\Users\\giuli\\Downloads\\Porcaria\\Projeto-SP-Med.-Group-main\\Back-end\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj",
         "projectName": "senai_spMedicalGroup_webApi",
-        "projectPath": "C:\\Users\\aluno\\Documents\\Pasta Mais Ridícula\\SENAI\\senai_sprint2_backend\\04_SPMedicalGroup\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj",
-        "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aluno\\Documents\\Pasta Mais Ridícula\\SENAI\\senai_sprint2_backend\\04_SPMedicalGroup\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\obj\\",
+        "projectPath": "C:\\Users\\giuli\\Downloads\\Porcaria\\Projeto-SP-Med.-Group-main\\Back-end\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi.csproj",
+        "packagesPath": "C:\\Users\\giuli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\giuli\\Downloads\\Porcaria\\Projeto-SP-Med.-Group-main\\Back-end\\senai_spMedicalGroup_webApi\\senai_spMedicalGroup_webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\giuli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -32,7 +32,8 @@ go
 
 CREATE TABLE especialidadeMedico(
    idEspecialidadeMedico smallint PRIMARY KEY IDENTITY(1,1),
-   nomeEspecialidade varchar(100) unique not null
+   nomeEspecialidade varchar(100) unique not null,
+   descricaoEspecialidade varchar(500)
 );
 go
 

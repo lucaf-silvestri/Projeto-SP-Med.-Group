@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = senai_spMedicalGroup_webApi
-build_property.ProjectDir = C:\Users\aluno\Documents\Pasta Mais Ridícula\SENAI\senai_sprint2_backend\04_SPMedicalGroup\senai_spMedicalGroup_webApi\senai_spMedicalGroup_webApi\
+build_property.ProjectDir = C:\Users\giuli\Downloads\Porcaria\Projeto-SP-Med.-Group-main\Back-end\senai_spMedicalGroup_webApi\senai_spMedicalGroup_webApi\

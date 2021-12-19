@@ -48,7 +48,34 @@ namespace senai_spMedicalGroup_webApi.Repositories
 
         public List<Consultum> Listar()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta
+                .Select(c => new Consultum
+                {
+                    IdConsulta = c.IdConsulta,
+                    DataConsulta = c.DataConsulta,
+                    DescricaoConsulta = c.DescricaoConsulta,
+                    IdClienteNavigation = new Cliente
+                    {
+                        NomeCliente = c.IdClienteNavigation.NomeCliente,
+                        DataNascCliente = c.IdClienteNavigation.DataNascCliente,
+                        TelefoneCliente = c.IdClienteNavigation.TelefoneCliente,
+                        RgCliente = c.IdClienteNavigation.RgCliente,
+                        CpfCliente = c.IdClienteNavigation.CpfCliente,
+                    },
+                    IdMedicoNavigation = new Medico
+                    {
+                        NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                        CrmMedico = c.IdMedicoNavigation.CrmMedico,
+                        IdEspecialidadeMedicoNavigation = new EspecialidadeMedico
+                        {
+                            NomeEspecialidade = c.IdMedicoNavigation.IdEspecialidadeMedicoNavigation.NomeEspecialidade
+                        },
+                    },
+                    IdSituacaoNavigation = new Situacao
+                    {
+                        TipoSituacao = c.IdSituacaoNavigation.TipoSituacao
+                    }
+                }).ToList();
         }
 
         public Consultum ListarId(int id)

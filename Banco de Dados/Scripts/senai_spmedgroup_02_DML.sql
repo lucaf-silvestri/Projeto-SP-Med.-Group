@@ -31,25 +31,25 @@ VALUES
 (8, 'Mariana', '05/03/2018', null, '54566266-8', '13771913039', 'R Sao Antonio, 232 - Vila Universal, Barueri - SP, 06407-140');
 GO
 
-INSERT INTO especialidadeMedico (nomeEspecialidade)
+INSERT INTO especialidadeMedico (nomeEspecialidade, descricaoEspecialidade)
 VALUES
-('Acupuntura'),
-('Anestesiologia'),
-('Angiologia'),
-('Cardiologia'),
-('Cirurgia Cardiovascular'),
-('Cirurgia da Mão'),
-('Cirurgia do aparelho digestivo'),
-('Cirurgia geral'),
-('Cirurgia pediátrica'),
-('Cirurgia plástica'),
-('Cirurgia torácica'),
-('Cirurgia vascular'),
-('Dermatologia'),
-('Radioterapia'),
-('Urologia'),
-('Pediatria'),
-('Psiquiatria');
+('Acupuntura', 'Terapia que consiste na aplicação de agulhas em pontos específicos do corpo para tratar doenças e para promover saúde.'),
+('Anestesiologia', 'Proporciona ausência ou alívio da dor ao paciente ao realizar procedimentos médicos, como cirurgias.'),
+('Angiologia', 'Estudo, diagnóstico e tratamento clínico das doenças vasculares.'),
+('Cardiologia', 'Cardiologia é a especialidade médica que se ocupa do diagnóstico e tratamento das doenças que acometem o coração bem como os outros componentes do sistema circulatório. O médico especialista nessa área é o cardiologista. Um dos exames mais comumente realizados, feito por rotina, durante uma consulta de cardiologia é o eletrocardiograma, que deverá ser interpretado e laudado pelo cardiologista.'),
+('Cirurgia Cardiovascular', 'A cirurgia cardiovascular é realizada para o tratamento de doenças do coração, como as cardiopatias congênitas, doenças das artérias coronarianas, da aorta e seus ramos, das válvulas cardíacas, da fibrilação atrial (arritmia) e insuficiência cardíaca.'),
+('Cirurgia da Mão', 'Cirurgia da mão é uma especialidade médica que se ocupa da prevenção, diagnóstico, tratamento e reabilitação das patologias que acometem as mãos.'),
+('Cirurgia do aparelho digestivo', 'A cirurgia do aparelho digestivo é uma especialidade médica que cuida do sistema digestivo, o que inclui esôfago, estômago, vesícula biliar, pâncreas, fígado e toda a extensão dos intestinos além do cólon, reto e ânus.'),
+('Cirurgia geral', 'Cirurgia geral é a especialidade médica cuja área de atuação compreende: Cirurgia Abdominal, Cirurgia videolaparoscópica e Cirurgia do trauma. Esta especialidade médica ocupa-se do estudo dos mecanismo fisiopatológicos, diagnóstico e tratamento de enfermidades passíveis de abordagem por procedimentos cirúrgicos.'),
+('Cirurgia pediátrica', 'A Cirurgia Pediátrica é a especialidade médica responsável pelo tratamento cirúrgico de doenças congênitas ou adquiridas, desde o período neonatal até o fim da puberdade.'),
+('Cirurgia plástica', 'A cirurgia plástica é uma das mais de 50 especialidades médicas reconhecidas pelo Conselho Federal de Medicina e pela Associação Médica Brasileira.'),
+('Cirurgia torácica', 'A cirurgia torácica é uma especialidade médica que trata das intervenções no tórax (tecidos, ossos e músculos) e no sistema respiratório (traquéia, brônquios, pulmões, pleuras e mediastino), para tratar diversos tipos de enfermidades, como o câncer de pulmão.'),
+('Cirurgia vascular', 'A cirurgia vascular é um dos ramos da medicina em que são tratados os vasos sanguíneos — sistema linfático, artérias e veias.'),
+('Dermatologia', 'Dermatologia é a especialidade médica que se ocupa do diagnóstico e tratamento clínico-cirúrgico das enfermidades relacionados à pele e aos anexos cutâneos (unhas, pelos, mucosas, cabelos). Dentro da dermatologia, existe a dermatovenerologia, especialidade que tem importante atuação no contexto das infecções sexualmente transmissíveis.'),
+('Radioterapia', 'É um tratamento no qual se utilizam radiações ionizantes (raio X, por exemplo) para destruir um tumor ou impedir que suas células aumentem. Estas radiações não são vistas e durante a aplicação o paciente não sente nada. A radioterapia pode ser usada em combinação com a quimioterapia ou outros tratamentos.'),
+('Urologia', 'A Urologia é uma especialidade médica dedicada ao estudo e tratamento de doenças do aparelho urinário (rins, ureter e bexiga) de homens e mulheres e de enfermidades que acometem o aparelho genital masculino (próstata, testículos e pênis).'),
+('Pediatria', 'Trata-se da especialidade médica dedicada a atender recém-nascidos, crianças e adolescentes nos seus diversos aspectos, sejam eles preventivos ou curativos. O maior objetivo dessa especialidade é auxiliar a família no processo de estabelecimento da saúde infantil.'),
+('Psiquiatria', 'Psiquiatria é uma das especialidades da Medicina, e basicamente é responsável pelo diagnóstico e tratamento dos chamados Transtornos Mentais e de Comportamento, atuando com a prevenção, o diagnóstico, o tratamento e a reabilitação dos diferentes modos de manifestações das doenças mentais em geral. São exemplos destas: a depressão, o transtorno bipolar, a esquizofrenia, a demência e os transtornos de ansiedade.');
 GO
 
 INSERT INTO clinica (enderecoClinica, horarioInicio, horarioFim, cnpj, nomeFantasia, razaoSocial)

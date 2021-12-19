@@ -28,6 +28,18 @@ namespace senai_spMedicalGroup_webApi
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000", "http://localhost:3001")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+    
+
             services
                 .AddAuthentication(options =>
                 {
@@ -73,6 +85,7 @@ namespace senai_spMedicalGroup_webApi
             });
 
             app.UseRouting();
+            app.UseCors("CorPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 
