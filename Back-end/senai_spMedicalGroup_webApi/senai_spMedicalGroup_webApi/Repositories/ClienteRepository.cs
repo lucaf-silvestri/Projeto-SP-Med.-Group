@@ -55,7 +55,25 @@ namespace senai_spMedicalGroup_webApi.Repositories
         /// <returns>Lista de Clientes</returns>
         public List<Cliente> Listar()
         {
-            return ctx.Clientes.ToList();
+            return ctx.Clientes
+                .Select(c => new Cliente
+                {
+                    IdCliente = c.IdCliente,
+                    IdUsuario = c.IdUsuario,
+                    NomeCliente = c.NomeCliente,
+                    DataNascCliente = c.DataNascCliente,
+                    TelefoneCliente = c.TelefoneCliente,
+                    RgCliente = c.RgCliente,
+                    CpfCliente = c.CpfCliente,
+                    EnderecoCliente = c.EnderecoCliente,
+                    IdUsuarioNavigation = new Usuario
+                    {
+                        IdUsuario = c.IdUsuarioNavigation.IdUsuario,
+                        IdTipoUsuario = c.IdUsuarioNavigation.IdTipoUsuario,
+                        Email = c.IdUsuarioNavigation.Email,
+                        Senha = c.IdUsuarioNavigation.Senha
+                    },
+                }).ToList();
         }
 
         public List<Cliente> ListarComConsultas()

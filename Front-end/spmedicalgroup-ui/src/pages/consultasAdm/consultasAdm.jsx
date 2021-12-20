@@ -53,7 +53,6 @@ export default function ConsultasAdm() {
   useEffect(BuscarConsultas, []);
 
   function CadastrarConsulta(consulta) {
-    consulta.preventDefault();
     axios.post("http://localhost:5000/api/Consultas", {
       idCliente: idCliente,
       idMedico: idMedico,
@@ -74,6 +73,7 @@ export default function ConsultasAdm() {
           setDescricaoConsulta("");
         }
       }).catch(erro => console.log(erro))
+    consulta.preventDefault();
   }
 
   function AtualizarSituacao(idConsulta) {
@@ -106,87 +106,99 @@ export default function ConsultasAdm() {
           <h1>Consultas</h1>
         </section>
         <section className="main-consultas">
-          <section className="conteudo-main-consultas1">
+
+          <form onSubmit={CadastrarConsulta} className="conteudo-main-consultas1">
             <h2>Para agendar uma consulta, insira seus dados:</h2>
             <div className="dados-consultas">Endereço de e-mail do Cliente</div>
-            <input type="text" placeholder="" className="caixa-consultas"></input>
+
+            <select className="caixa-consultas" value={idCliente} onChange={(campo) => setIdCliente(campo.target.value)}>
+              <option value="0" disabled>Selecione o e-mail do paciente</option>
+              {
+                listaClientes.map((cliente) => {
+                  return (
+                    <option key={cliente.idCliente} value={cliente.idCliente}>
+                      {cliente.idUsuarioNavigation.email}
+                    </option>
+                  )
+                })
+              }
+            </select>
+
             <div className="dados-consultas">Endereço de e-mail do médico</div>
-            <input type="text" placeholder="" className="caixa-consultas"></input>
-            <div className="dados-consultas">Especialidade da consulta</div>
-            <div className="barra-especialidade">
-              <select>
-                <option>Acupuntura</option>
-                <option>Anestesiologia</option>
-                <option>Angiologia</option>
-                <option>Cardiologia</option>
-                <option>Cirurgia Cardiovascular</option>
-                <option>Cirurgia da Mão</option>
-                <option>Cirurgia do aparelho digestivo</option>
-                <option>Cirurgia geral</option>
-                <option>Cirurgia pediátrica</option>
-                <option>Cirurgia plástica</option>
-                <option>Cirurgia torácica</option>
-                <option>Cirurgia vascular</option>
-                <option>Dermatologia</option>
-                <option>Radioterapia</option>
-                <option>Urologia</option>
-                <option>Pediatria</option>
-                <option>Psiquiatria</option>
-              </select>
-            </div>
+
+            <select className="caixa-consultas" value={idMedico} onChange={(campo) => setIdMedico(campo.target.value)}>
+              <option value="0" disabled>Selecione o e-mail do médico</option>
+              {
+                listaMedicos.map((medico) => {
+                  return (
+                    <option key={medico.idMedico} value={medico.idMedico}>
+                      {medico.idUsuarioNavigation.email}
+                    </option>
+                  )
+                })
+              }
+            </select>
+
             <div className="dados-consultas">Data da consulta</div>
             <div className="barra-data">
-              <input type="date">
-              </input>
+              <input type="datetime-local" value={dataConsulta} onChange={(campo) =>
+                setDataConsulta(campo.target.value)} />
             </div>
-            <Link to="/consultasAdm" className="enviar">Agendar</Link>
-          </section>
+            <div className="dados-consultas">Situação da consulta</div>
+            <div className="barra-data">
+              <select value={idSituacao} onChange={(campo) =>
+                setIdSituacao(campo.target.value)}>
+                <option value="0" disabled>Selecione a situação</option>
+                <option value="1" >Agendada</option>
+                <option value="2" >Realizada</option>
+                <option value="3" >Cancelada</option>
+              </select>
+            </div>
+            <button type="submit" className="enviar">Agendar</button>
+          </form>
+
           <section className="conteudo-main-consultas2">
             <h2>Próximas consultas:</h2>
             <div className="linha-suas-consultas"></div>
 
             {
-              listaConsultas.map((consulta) => {
-                return (
-                  <div class="caixa-suas-consultas">
-                    <div class="conteudo-suas-consultas">
-                      <div class="conteudo-suas-consultas1">
-                        <div class="dado-suas-consultas">
-                          <span>Nome completo:</span>
-                          <p>{consulta.idPacienteNavigation.nomePaciente}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Médico:</span>
-                          <p>{consulta.idMedicoNavigation.nomeMedico}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Especialidade:</span>
-                          <p>{consulta.idMedicoNavigation.idEspecialidadeMedicoNavigation.nomeEspecialidade}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Descrição:</span>
-                        </div>
+              listaConsultas.map((consulta) => (
+                <div key={consulta.idConsulta} className="caixa-suas-consultas">
+                  <div className="conteudo-suas-consultas">
+                    <div className="conteudo-suas-consultas1">
+                      <div className="dado-suas-consultas">
+                        <span>Nome completo:</span>
+                        <p>{consulta.idClienteNavigation.nomeCliente}</p>
                       </div>
-                      <div class="conteudo-suas-consultas2">
-                        <span class="situacao-consulta">Agendada</span>
-                        <div class="data-consulta">
-                          <span>
-                            Data:
-                          </span>
-                          <p>{Intl.DateTimeFormat("pt-BR", {
-                            year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric"
-                          }).format(new Date(consulta.dataConsulta))}</p>
-                        </div>
+                      <div className="dado-suas-consultas">
+                        <span>Médico:</span>
+                        <p>{consulta.idMedicoNavigation.nomeMedico}</p>
+                      </div>
+                      <div className="dado-suas-consultas">
+                        <span>Especialidade:</span>
+                        <p>{consulta.idMedicoNavigation.idEspecialidadeMedicoNavigation.nomeEspecialidade}</p>
+                      </div>
+                      <div className="dado-suas-consultas">
+                        <span>Descrição:</span>
                       </div>
                     </div>
-                    <div class="descricao-suas-consultas">
-                      <p>O suco de uva é uma excelente opção para hidratar e manter o bom funcionamento do corpo. Além
-                        de ser uma bebida saborosa e que combina com qualquer época do ano, o suco integral da fruta
-                        oferece uma variedade de benefícios para a saúde.</p>
+                    <div className="conteudo-suas-consultas2">
+                      <span className="situacao-consulta">{consulta.idSituacaoNavigation.tipoSituacao}</span>
+                      <div className="data-consulta">
+                        <span>
+                          Data:
+                        </span>
+                        <p>{Intl.DateTimeFormat({
+                          year: "numeric", month: "numeric", day: "numeric"
+                        }).format(new Date(consulta.dataConsulta))}</p>
+                      </div>
                     </div>
                   </div>
-                )
-              }
+                  <div className="descricao-suas-consultas">
+                    <p>{consulta.descricaoConsulta}</p>
+                  </div>
+                </div>
+              )
               )
             }
 

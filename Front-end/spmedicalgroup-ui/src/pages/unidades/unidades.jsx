@@ -49,7 +49,7 @@ export default class Unidades extends Component {
 
                             {this.state.listaUnidades.map((unidade) => {
                                 return (
-                                    <div className="caixa-unidades">
+                                    <div className="caixa-unidades" key={unidade.idClinica}>
                                         <div className="conteudo-caixa-unidades">
                                             <div className="conteudo-caixa-unidades2">
                                                 <div className="titulo-unidades">{unidade.nomeFantasia}</div>

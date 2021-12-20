@@ -40,5 +40,19 @@ namespace senai_spMedicalGroup_webApi.Interfaces
         /// </summary>
         /// <param name="idConsulta">ID da Consulta deletada</param>
         void Deletar(int idConsulta);
+
+        /// <summary>
+        /// Lista as consultas ligadas a um usuário específico
+        /// </summary>
+        /// <param name="idUsuario">Id do usuário que terá as consultas listadas</param>
+        /// <returns>Lista de consultas</returns>
+        List<Consultum> ListarEspecifico(int idUsuario);
+
+        /// <summary>
+        /// Adiciona descrição a uma consulta existente
+        /// </summary>
+        /// <param name="idConsulta">Id da consulta que terá a descrição adicionada</param>
+        /// <param name="ConsultaDescricao">objeto com atributo descrição</param>
+        void AdicionarDecricao(int idConsulta, Consultum ConsultaDescricao);
     }
 }

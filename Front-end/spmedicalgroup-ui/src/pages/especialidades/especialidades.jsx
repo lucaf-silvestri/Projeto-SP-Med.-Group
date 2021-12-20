@@ -53,7 +53,7 @@ export default class Especialidades extends Component {
 
                                 {this.state.listaEspecialidades.map((especialidade) => {
                                     return (
-                                        <div className="caixa-especialidade">
+                                        <div className="caixa-especialidade" key={especialidade.idEspecialidadeMedico}>
                                             <div className="imagem-especialidade">
                                                 <img src={Cardiologia} alt="Imagem da Especialidade" />
                                             </div>

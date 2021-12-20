@@ -39,40 +39,40 @@ export default class Medicos extends Component {
         return (
             <div>
                 <Cabecalho />
-                <section class="espaco-vazio">
+                <section className="espaco-vazio">
 
                 </section>
 
                 <main>
-                    <section class="banner-medicos">
+                    <section className="banner-medicos">
                         <h1>Médicos</h1>
                     </section>
-                    <section class="main-medicos">
-                        <section class="conteudo-main-medicos">
-                            <section class="espaco-medicos">
-                                <div class="espaco-vazio-medicos"></div>
+                    <section className="main-medicos">
+                        <section className="conteudo-main-medicos">
+                            <section className="espaco-medicos">
+                                <div className="espaco-vazio-medicos"></div>
 
 
                                 {this.state.listaMedicos.map((medico) => {
                                     return (
-                                        <div class="caixa-medico">
-                                            <div class="foto-medico-container">
-                                                <div class="circulo-perfil-medico">
+                                        <div className="caixa-medico" key={medico.idMedico}>
+                                            <div className="foto-medico-container">
+                                                <div className="circulo-perfil-medico">
                                                     <img src={Perfil} alt="Imagem de Perfil" />
                                                 </div>
                                             </div>
-                                            <div class="informacoes-medico">
-                                                <div class="titulo-medico">{medico.nomeMedico}</div>
-                                                <div class="linha-medico">
+                                            <div className="informacoes-medico">
+                                                <div className="titulo-medico">{medico.nomeMedico}</div>
+                                                <div className="linha-medico">
                                                     <div></div>
                                                 </div>
-                                                <div class="espe-cli-medico">
-                                                    <div class="espe-cli-medico1">Especialidade:</div>
-                                                    <div class="espe-cli-medico2">{medico.idEspecialidadeMedicoNavigation.nomeEspecialidade}</div>
+                                                <div className="espe-cli-medico">
+                                                    <div className="espe-cli-medico1">Especialidade:</div>
+                                                    <div className="espe-cli-medico2">{medico.idEspecialidadeMedicoNavigation.nomeEspecialidade}</div>
                                                 </div>
-                                                <div class="espe-cli-medico">
-                                                    <div class="espe-cli-medico1">Clínica:</div>
-                                                    <div class="espe-cli-medico2">{medico.idClinicaNavigation.nomeFantasia}</div>
+                                                <div className="espe-cli-medico">
+                                                    <div className="espe-cli-medico1">Clínica:</div>
+                                                    <div className="espe-cli-medico2">{medico.idClinicaNavigation.nomeFantasia}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,14 +81,14 @@ export default class Medicos extends Component {
 
 
                             </section>
-                            <section class="espaco-consulta">
-                                <div class="espaco-vazio-medicos"></div>
-                                <div class="marque-uma-consulta">
-                                    <div class="img-marque-uma-consulta"></div>
-                                    <div class="titulo-marque-uma-consulta">
+                            <section className="espaco-consulta">
+                                <div className="espaco-vazio-medicos"></div>
+                                <div className="marque-uma-consulta">
+                                    <div className="img-marque-uma-consulta"></div>
+                                    <div className="titulo-marque-uma-consulta">
                                         <p>Marque sua consulta</p>
                                     </div>
-                                    <div class="txt-marque-uma-consulta">
+                                    <div className="txt-marque-uma-consulta">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>

@@ -71,7 +71,14 @@ namespace senai_spMedicalGroup_webApi.Repositories
                     {
                         NomeEspecialidade = c.IdEspecialidadeMedicoNavigation.NomeEspecialidade,
                         DescricaoEspecialidade = c.IdEspecialidadeMedicoNavigation.DescricaoEspecialidade,
-                    }
+                    },
+                    IdUsuarioNavigation = new Usuario
+                    {
+                        IdUsuario = c.IdUsuarioNavigation.IdUsuario,
+                        IdTipoUsuario = c.IdUsuarioNavigation.IdTipoUsuario,
+                        Email = c.IdUsuarioNavigation.Email,
+                        Senha = c.IdUsuarioNavigation.Senha
+                    },
                 }).ToList();
         }
 
