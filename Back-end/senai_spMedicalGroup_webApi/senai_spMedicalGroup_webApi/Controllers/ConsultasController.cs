@@ -12,10 +12,6 @@ using System.Security.Claims;
 
 namespace senai_spMedicalGroup_webApi.Controllers
 {
-
-    /// <summary>
-    /// Controller responsável pelos endpoints das consultas.
-    /// </summary>
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -23,18 +19,11 @@ namespace senai_spMedicalGroup_webApi.Controllers
     {
         private IConsultaRepository _ConsultaRepository { get; set; }
 
-        /// <summary>
-        /// Objeto _ConsultaRepository que irá receber todos os métodos definidos na interface IConsultaRepository
-        /// </summary>
         public ConsultasController()
         {
             _ConsultaRepository = new ConsultaRepository();
         }
 
-        /// <summary>
-        /// Lista todas as Situacoes
-        /// </summary>
-        /// <returns>Lista de Situacoes</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -42,11 +31,6 @@ namespace senai_spMedicalGroup_webApi.Controllers
             return Ok(listaConsultas);
         }
 
-        /// <summary>
-        /// Busca uma Consulta através de seu ID
-        /// </summary>
-        /// <param name="id">ID da Consulta buscada</param>
-        /// <returns>A Consulta buscada</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -60,22 +44,14 @@ namespace senai_spMedicalGroup_webApi.Controllers
             return Ok(ConsultaBuscado);
         }
 
-        /// <summary>
-        /// Cadastra uma nova Consulta
-        /// </summary>
-        /// <param name="novaConsulta">Objeto novaConsulta com os novos dados</param>
         [HttpPost]
-        public IActionResult Post(Consultum novaConsulta)
+        public IActionResult Post(Consultum novoConsulta)
         {
-            _ConsultaRepository.Cadastrar(novaConsulta);
+            _ConsultaRepository.Cadastrar(novoConsulta);
 
             return StatusCode(201);
         }
 
-        /// <summary>
-        /// Deleta uma Consulta existente
-        /// </summary>
-        /// <param name="id">ID da Consulta deletada</param>
         [HttpDelete("excluir/{id}")]
         public IActionResult Delete(int id)
         {
@@ -83,15 +59,10 @@ namespace senai_spMedicalGroup_webApi.Controllers
             return StatusCode(204);
         }
 
-        /// <summary>
-        /// Atualiza uma Consulta existente passando o id pela URL da requisição
-        /// </summary>
-        /// <param name="idConsulta">id da Consulta que será atualizada</param>
-        /// <param name="ConsultaAtualizada">Objeto ConsultaAtualizada com os novos dados</param>
         [HttpPut("{id}")]
-        public IActionResult Put(int idConsulta, Consultum ConsultaAtualizada)
+        public IActionResult Put(int id, Consultum ConsultaAtualizado)
         {
-            Consultum ConsultaBuscado = _ConsultaRepository.ListarId(idConsulta);
+            Consultum ConsultaBuscado = _ConsultaRepository.ListarId(id);
 
             if (ConsultaBuscado == null)
             {
@@ -105,7 +76,7 @@ namespace senai_spMedicalGroup_webApi.Controllers
 
             try
             {
-                _ConsultaRepository.Atualizar(idConsulta, ConsultaAtualizada);
+                _ConsultaRepository.Atualizar(id, ConsultaAtualizado);
 
                 return NoContent();
             }
@@ -115,39 +86,27 @@ namespace senai_spMedicalGroup_webApi.Controllers
             }
         }
 
-        /// <summary>
-        /// Lista as consultas ligadas a um usuário específico
-        /// </summary>
-        /// <returns>Lista de consultas</returns>
-        [HttpGet("especifico")]
-        public IActionResult ListarEspecifico()
+        [HttpPatch("situacao/{idConsulta}")]
+        public IActionResult AtualizarSituacao(int idConsulta, Consultum ConsultaSituacao)
         {
             try
             {
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                _ConsultaRepository.AtualizarSituacao(idConsulta, ConsultaSituacao.IdSituacao.ToString());
 
-                return Ok(_ConsultaRepository.ListarEspecifico(idUsuario));
+                return StatusCode(204);
             }
             catch (Exception erro)
             {
-                return BadRequest(new
-                {
-                    erro
-                });
+                return BadRequest(erro);
             }
         }
 
-        /// <summary>
-        /// Adiciona descrição a uma consulta existente
-        /// </summary>
-        /// <param name="idConsulta">Id da consulta que terá a descrição adicionada</param>
-        /// <param name="novaConsulta">Consulta com a nova Descrição</param>
         [HttpPatch("descricao/{idConsulta}")]
-        public IActionResult AdicionarDescricao(int idConsulta, Consultum novaConsulta)
+        public IActionResult AtualizarDescricao(int idConsulta, Consultum ConsultaAtualizada)
         {
             try
             {
-                _ConsultaRepository.AdicionarDecricao(idConsulta, novaConsulta);
+                _ConsultaRepository.AtualizarDescricao(idConsulta, ConsultaAtualizada);
 
                 return StatusCode(204);
             }
@@ -157,5 +116,6 @@ namespace senai_spMedicalGroup_webApi.Controllers
             }
 
         }
+
     }
 }

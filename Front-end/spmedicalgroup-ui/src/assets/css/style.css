@@ -1349,7 +1349,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: right;
 }
 
 .dado-suas-consultas {
@@ -1397,14 +1397,33 @@ footer p {
     max-height: 100%;
 }
 
+.descricao-suas-consultas input {
+    width: 90%;
+    height: 75%;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #3A3A3A;
+    font-family: 'Roboto', sans-serif;
+    word-break: break-word;
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    max-height: 100%;
+    outline: none;
+    border: none;
+}
+
 .situacao-consulta {
-    width: fit-content;
+    width: 100%;
     height: 100%;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
     color: #3A3A3A;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: right;
 }
 
 .data-consulta {
@@ -1536,4 +1555,31 @@ footer p {
     align-self: center;
     justify-self: center;
     outline: none;
+}
+
+.selectSituacao {
+    display: flex;
+    width: 40%;
+    height: 70px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #3a3a3a;
+    border-radius: 50px;
+    background: none;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #DBDBDB;
+}
+
+.botaoAtualizar {
+    background: none;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    border: none;
+    font-family: 'Roboto';
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #3a3a3a;
 }

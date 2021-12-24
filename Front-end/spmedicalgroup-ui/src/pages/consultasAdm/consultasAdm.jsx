@@ -1,6 +1,5 @@
 import "../../assets/css/style.css"
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
 import Cabecalho from "../../components/cabecalho/cabecalho"
 import axios from "axios";
 import Rodape from "../../components/rodape/rodape"
@@ -14,7 +13,9 @@ export default function ConsultasAdm() {
   const [listaMedicos, setListaMedicos] = useState([]);
   const [dataConsulta, setDataConsulta] = useState(new Date());
   const [descricaoConsulta, setDescricaoConsulta] = useState("");
-
+  const refreshPage = () => {
+    window.location.reload();
+  }
 
   function BuscarMedicos() {
     axios("http://localhost:5000/api/Medicos", {
@@ -76,21 +77,20 @@ export default function ConsultasAdm() {
     consulta.preventDefault();
   }
 
-  function AtualizarSituacao(idConsulta) {
-    axios.patch("http://localhost:5000/api/Consultas/" + idConsulta, {
-      idSituacao: idSituacao
+  function AtualizarConsulta(consulta) {
+    console.log(consulta.idConsulta);
+    axios.patch('http://localhost:5000/api/consultas/situacao/' + consulta.idConsulta, {
+      idSituacao: idSituacao,
     }, {
       headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
     })
       .then(resposta => {
-        if (resposta.status === 204) {
-          console.log("Consulta" + idConsulta + "atualizada.");
-          document.getElementById(idConsulta).setAttribute("disabled", "disabled");
-          var botao = document.getElementById("botao" + idConsulta)
-          botao.style.display = "none";
-          BuscarConsultas();
+        if (resposta.status === 201) {
+          console.log("Consulta atualizada.");
+          setIdSituacao(0);
         }
       }).catch(erro => console.log(erro))
+    refreshPage();
   }
 
   return (
@@ -109,10 +109,10 @@ export default function ConsultasAdm() {
 
           <form onSubmit={CadastrarConsulta} className="conteudo-main-consultas1">
             <h2>Para agendar uma consulta, insira seus dados:</h2>
-            <div className="dados-consultas">Endereço de e-mail do Cliente</div>
+            <div className="dados-consultas">Endereço de e-mail do cliente</div>
 
             <select className="caixa-consultas" value={idCliente} onChange={(campo) => setIdCliente(campo.target.value)}>
-              <option value="0" disabled>Selecione o e-mail do paciente</option>
+              <option value="0" disabled>Selecione o e-mail do cliente</option>
               {
                 listaClientes.map((cliente) => {
                   return (
@@ -183,7 +183,19 @@ export default function ConsultasAdm() {
                       </div>
                     </div>
                     <div className="conteudo-suas-consultas2">
+
                       <span className="situacao-consulta">{consulta.idSituacaoNavigation.tipoSituacao}</span>
+
+                      <select className="selectSituacao" value={idSituacao} onChange={(campo) =>
+                        setIdSituacao(campo.target.value)}>
+                        <option value="0" disabled>Selecione a situação</option>
+                        <option value="1" >Agendada</option>
+                        <option value="2" >Realizada</option>
+                        <option value="3" >Cancelada</option>
+                      </select>
+                      <button className="botaoAtualizar" onClick={() => { AtualizarConsulta(consulta); }}>Atualizar</button>
+
+
                       <div className="data-consulta">
                         <span>
                           Data:

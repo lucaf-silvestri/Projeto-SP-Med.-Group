@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "38e318a3-8e80-4e02-9f2a-37259c76b2a1",
+		"_postman_id": "0080d9b1-a207-4a56-b538-d9d7023e0bc7",
 		"name": "Senai.SPMedicalGroup.Manha",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,7 +46,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2NDAyNzg3MzMsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.Zq-YD8N8dQ1umeO8vwHaweDP1ro3tlc_6_KxOkMROqo",
 									"type": "string"
 								}
 							]
@@ -116,7 +116,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2NDAyNzg3MzMsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.Zq-YD8N8dQ1umeO8vwHaweDP1ro3tlc_6_KxOkMROqo",
 									"type": "string"
 								}
 							]
@@ -412,7 +412,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2NDAyODQ3MTIsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.eZ6YeoSi-tItrD4ahpwufmQFuiFFW49Jpk98SkPg5qw",
 									"type": "string"
 								}
 							]
@@ -442,7 +442,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2NDAyNzg3MzMsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.Zq-YD8N8dQ1umeO8vwHaweDP1ro3tlc_6_KxOkMROqo",
 									"type": "string"
 								}
 							]
@@ -451,7 +451,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 3,\r\n    \"idMedico\": 1,\r\n    \"idSituacao\": 1,\r\n    \"dataConsulta\": \"2022-01-01T00:00:00\",\r\n}",
+							"raw": "{\r\n    \"idCliente\": 3,\r\n    \"idMedico\": 1,\r\n    \"idSituacao\": 1,\r\n    \"dataConsulta\": \"2022-01-01T00:00:00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -487,9 +487,22 @@
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
-							"raw": "http://localhost:5000/api/Consultas/8",
+							"raw": "http://localhost:5000/api/Consultas/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -498,7 +511,7 @@
 							"path": [
 								"api",
 								"Consultas",
-								"8"
+								"9"
 							]
 						}
 					},
@@ -512,7 +525,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2NDAyNzg3MzMsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.Zq-YD8N8dQ1umeO8vwHaweDP1ro3tlc_6_KxOkMROqo",
 									"type": "string"
 								}
 							]
@@ -521,7 +534,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 3,\r\n    \"idMedico\": 1,\r\n    \"idSituacao\": 3,\r\n    \"dataConsulta\": \"2022-01-01T00:00:00\",\r\n}",
+							"raw": "{\r\n    \"idSituacao\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -529,7 +542,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/Consultas/8",
+							"raw": "http://localhost:5000/api/Consultas/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -538,7 +551,7 @@
 							"path": [
 								"api",
 								"Consultas",
-								"8"
+								"9"
 							]
 						}
 					},
@@ -552,7 +565,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjM1NDM0MTQzLCJpc3MiOiJMdWNhIiwiYXVkIjoiTHVjYSJ9.GcnDwx9040nw5tYt2hdbuEBuJWeywExLE3zEh_bOPYc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlcm5hbmRvc3RyYWRhQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwicm9sZSI6IjEiLCJleHAiOjE2NDAyNzg3MzMsImlzcyI6Ikx1Y2EiLCJhdWQiOiJMdWNhIn0.Zq-YD8N8dQ1umeO8vwHaweDP1ro3tlc_6_KxOkMROqo",
 									"type": "string"
 								}
 							]
@@ -560,7 +573,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/Consultas/excluir/8",
+							"raw": "http://localhost:5000/api/Consultas/excluir/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -570,7 +583,69 @@
 								"api",
 								"Consultas",
 								"excluir",
-								"8"
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultas.AtualizarDescricao",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricaoConsulta\": \"saaaaaaaaiiii\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/descricao/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"descricao",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultas.AtualizarSituacao",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idSituacao\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/situacao/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"situacao",
+								"9"
 							]
 						}
 					},
@@ -1629,7 +1704,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"fernandostrada@gmail.com\",\r\n    \"senha\" : \"fernandostrada123\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"ligia@gmail.com\",\r\n    \"senha\" : \"ligia123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

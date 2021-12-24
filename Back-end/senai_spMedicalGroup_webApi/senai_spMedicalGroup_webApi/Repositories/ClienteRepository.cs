@@ -66,13 +66,13 @@ namespace senai_spMedicalGroup_webApi.Repositories
                     RgCliente = c.RgCliente,
                     CpfCliente = c.CpfCliente,
                     EnderecoCliente = c.EnderecoCliente,
+
                     IdUsuarioNavigation = new Usuario
                     {
-                        IdUsuario = c.IdUsuarioNavigation.IdUsuario,
-                        IdTipoUsuario = c.IdUsuarioNavigation.IdTipoUsuario,
                         Email = c.IdUsuarioNavigation.Email,
-                        Senha = c.IdUsuarioNavigation.Senha
-                    },
+                        Senha = c.IdUsuarioNavigation.Senha,
+                        IdTipoUsuario = c.IdUsuarioNavigation.IdTipoUsuario
+                    }
                 }).ToList();
         }
 

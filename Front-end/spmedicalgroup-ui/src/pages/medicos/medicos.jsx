@@ -1,10 +1,8 @@
 import "../../assets/css/style.css"
-import { Link } from 'react-router-dom';
 import Cabecalho from "../../components/cabecalho/cabecalho"
 import Rodape from "../../components/rodape/rodape"
 import MarqueConsulta from "../../components/marqueconsulta/marqueconsulta"
 import { Component } from 'react';
-import Cardiologia from "../../assets/img/Cardiologia-removebg-preview.png"
 import Perfil from "../../assets/img/perfil.png"
 
 export default class Medicos extends Component {
@@ -83,16 +81,7 @@ export default class Medicos extends Component {
                             </section>
                             <section className="espaco-consulta">
                                 <div className="espaco-vazio-medicos"></div>
-                                <div className="marque-uma-consulta">
-                                    <div className="img-marque-uma-consulta"></div>
-                                    <div className="titulo-marque-uma-consulta">
-                                        <p>Marque sua consulta</p>
-                                    </div>
-                                    <div className="txt-marque-uma-consulta">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
+                                <MarqueConsulta />
                             </section>
                         </section>
                     </section>

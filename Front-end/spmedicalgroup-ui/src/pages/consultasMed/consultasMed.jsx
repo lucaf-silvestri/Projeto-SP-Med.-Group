@@ -7,17 +7,13 @@ import axios from "axios";
 
 export default function ConsultasMedico() {
   const [listaConsultas, setListaConsultas] = useState([]);
-  const [descricao, setDescricao] = useState("");
-  const [idCliente, setIdCliente] = useState(0);
-  const [idMedico, setIdMedico] = useState(0);
-  const [idSituacao, setIdSituacao] = useState(0);
-  const [listaClientes, setListaClientes] = useState([]);
-  const [listaMedicos, setListaMedicos] = useState([]);
-  const [dataConsulta, setDataConsulta] = useState(new Date());
   const [descricaoConsulta, setDescricaoConsulta] = useState("");
+  const refreshPage = () => {
+    window.location.reload();
+  }
 
   function BuscarConsultasEspecificas() {
-    axios("http://localhost:5000/api/Consultas/Minhas", {
+    axios("http://localhost:5000/api/Consultas", {
       headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
     })
       .then(resposta => {
@@ -28,49 +24,20 @@ export default function ConsultasMedico() {
   }
   useEffect(BuscarConsultasEspecificas, []);
 
-  function Descricao(idConsulta, descricaoConsulta) {
-    setDescricao(descricaoConsulta);
-    var textoDescricao = document.getElementById("descricao" + idConsulta)
-    textoDescricao.removeAttribute("leitura");
-
-    if (textoDescricao.value === null || textoDescricao.value === "" || textoDescricao.value === undefined) {
-      textoDescricao.value = "Adicionar descrição";
-    }
-
-    if (textoDescricao.style.display === "none") {
-      textoDescricao.style.display = "";
-    }
-    
-    else {
-      textoDescricao.style.display = "none";
-    }
-
-    var botao = document.getElementById("botao" + idConsulta);
-
-    if (botao.style.display === "none") {
-      botao.style.display = "";
-    } else {
-      setDescricao("")
-      botao.style.display = "none";
-    }
-  }
-
-  function AtualizarDescricao(idConsulta) {
-    console.log(descricao + idConsulta)
-    //!Atualizar API!
-    axios.patch("http://localhost:5000/api/Consultas/descricao/" + idConsulta, {
-      descricaoConsulta: descricao
+  function AtualizarConsulta(consulta) {
+    console.log(consulta.idConsulta);
+    axios.patch('http://localhost:5000/api/consultas/descricao/' + consulta.idConsulta, {
+      descricaoConsulta: descricaoConsulta,
     }, {
       headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
     })
       .then(resposta => {
-        if (resposta.status === 204) {
-          var botao = document.getElementById("botao" + idConsulta)
-          botao.style.display = "none";
-          BuscarConsultasEspecificas();
-          setDescricao("")
+        if (resposta.status === 201) {
+          console.log("Consulta atualizada.");
+          setDescricaoConsulta("sas");
         }
       }).catch(erro => console.log(erro))
+      refreshPage();
   }
 
   return (
@@ -90,45 +57,49 @@ export default function ConsultasMedico() {
             <div className="linha-suas-consultas"></div>
 
             {
-              listaConsultas.map((consulta) => {
-                return (
-                  <div class="caixa-suas-consultas">
-                    <div class="conteudo-suas-consultas">
-                      <div class="conteudo-suas-consultas1">
-                        <div class="dado-suas-consultas">
-                          <span>Nome completo:</span>
-                          <p>{consulta.idPacienteNavigation.nomePaciente}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Médico:</span>
-                          <p>{consulta.idMedicoNavigation.nomeMedico}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Especialidade:</span>
-                          <p>{consulta.idMedicoNavigation.idEspecialidadeMedicoNavigation.nomeEspecialidade}</p>
-                        </div>
-                        <div class="dado-suas-consultas">
-                          <span>Descrição:</span>
-                        </div>
+              listaConsultas.map((consulta) => (
+                <div key={consulta.idConsulta} className="caixa-suas-consultas">
+                  <div className="conteudo-suas-consultas">
+                    <div className="conteudo-suas-consultas1">
+                      <div className="dado-suas-consultas">
+                        <span>Nome completo:</span>
+                        <p>{consulta.idClienteNavigation.nomeCliente}</p>
                       </div>
-                      <div class="conteudo-suas-consultas2">
-                        <span class="situacao-consulta">Agendada</span>
-                        <div class="data-consulta">
-                          <span>
-                            Data:
-                          </span>
-                          <p>{Intl.DateTimeFormat("pt-BR", {
-                            year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric"
-                          }).format(new Date(consulta.dataConsulta))}</p>
-                        </div>
+                      <div className="dado-suas-consultas">
+                        <span>Médico:</span>
+                        <p>{consulta.idMedicoNavigation.nomeMedico}</p>
+                      </div>
+                      <div className="dado-suas-consultas">
+                        <span>Especialidade:</span>
+                        <p>{consulta.idMedicoNavigation.idEspecialidadeMedicoNavigation.nomeEspecialidade}</p>
+                      </div>
+                      <div className="dado-suas-consultas">
+                        <span>Descrição:</span>
                       </div>
                     </div>
-                    <div className="descricao-suas-consultas-medico">
-                      <input placeholder="Adicionar descrição" />
+                    <div className="conteudo-suas-consultas2">
+                      <span className="situacao-consulta">{consulta.idSituacaoNavigation.tipoSituacao}</span>
+                      <div className="data-consulta">
+                        <span>
+                          Data:
+                        </span>
+                        <p>{Intl.DateTimeFormat({
+                          year: "numeric", month: "numeric", day: "numeric"
+                        }).format(new Date(consulta.dataConsulta))}</p>
+                      </div>
                     </div>
                   </div>
-                )
-              }
+                  <div className="descricao-suas-consultas">
+
+
+                    <input value={descricaoConsulta} onChange={(campo) => setDescricaoConsulta(campo.target.value)} placeholder={consulta.descricaoConsulta}/>
+                    <button className="botaoAtualizar" onClick={() => { AtualizarConsulta(consulta); }}>Atualizar</button>
+
+
+
+                  </div>
+                </div>
+              )
               )
             }
 
